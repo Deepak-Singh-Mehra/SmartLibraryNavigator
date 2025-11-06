@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+
+    <!-- Add / Update Book Section -->
+    <div class="admin-section">
+        <h3>Add / Update Book</h3>
+        <input type="text" id="bookId" placeholder="Book ID">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="text" id="category" placeholder="Category">
+        <input type="text" id="shelf" placeholder="Shelf">
+        <input type="number" id="copies" placeholder="Total Copies">
+        <button onclick="addBook()">Add Book</button>
+        <button onclick="updateBook()">Update Book</button>
+        <p id="admin-msg"></p>
+    </div>
+
+    <!-- Issue / Return Book Section -->
+    <div class="admin-section">
+        <h3>Issue / Return Book</h3>
+        <input type="text" id="issueBookId" placeholder="Book ID">
+        <input type="text" id="studentId" placeholder="Student ID">
+        <button onclick="issueBook()">Issue Book</button>
+        <button onclick="returnBook()">Return Book</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

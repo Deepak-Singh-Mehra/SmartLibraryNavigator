@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Student Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <div class="grid">
+    <div class="panel">
+      <h3>Search Book</h3>
+      <input id="searchTitle" placeholder="Type book title..." oninput="autoSuggest()">
+      <ul id="suggestions"></ul>
+      <button onclick="searchBook()">Search</button>
+      <div id="book-details"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Your Info</h3>
+      <div id="user-info"></div>
+      <h4>Most Issued</h4>
+      <ul id="most-issued"></ul>
+      <h4>Recommendations</h4>
+      <ul id="recommendations"></ul>
+    </div>
+
+    <div class="panel">
+      <h3>Library Map</h3>
+      <img src="https://i.imgur.com/3b7gQ6s.png" alt="library-map" style="max-width:100%;">
+      <p>After searching a book, shortest path will be shown above the map path (textually).</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script> // on load
+    const sid = localStorage.getItem('studentId'); 
+    if (!sid) location.href = 'login.html?mode=student';
+    document.getElementById('user-info').innerHTML = `<p>ID: ${sid}</p>`;
+    getRecommendations(); loadUserIssued(sid); loadMostIssued();
+  </script>
+</body>
+</html>

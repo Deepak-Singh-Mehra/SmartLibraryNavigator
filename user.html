@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Student Dashboard</h2>
+
+    <!-- Search Book Section -->
+    <div class="student-section">
+        <h3>Search Book</h3>
+        <input type="text" id="searchTitle" placeholder="Enter book title" oninput="autoSuggest()">
+        <ul id="suggestions"></ul>
+        <button onclick="searchBook()">Search</button>
+        <div id="book-details"></div>
+    </div>
+
+    <!-- Recommendations Section -->
+    <div class="student-section">
+        <h3>Top 5 Recommended Books</h3>
+        <button onclick="getRecommendations()">Show Recommendations</button>
+        <ul id="recommendations"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

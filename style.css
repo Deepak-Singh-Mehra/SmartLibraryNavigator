@@ -1,0 +1,18 @@
+:root{--accent:#4f46e5;--muted:#6b7280;--bg:#f8fafc}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial;background:var(--bg);margin:0;color:#111}
+.hero{padding:80px 16px;text-align:center;background:linear-gradient(135deg,#eef2ff,#fff);border-bottom:1px solid #e6e9ef}
+.hero h1{font-size:36px;margin:0;color:var(--accent)}
+.hero p{color:var(--muted);margin:10px 0 20px}
+.btn{display:inline-block;padding:12px 20px;margin:6px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+.card{width:420px;margin:48px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(31,41,55,0.06);text-align:center}
+.card input{width:100%;padding:12px;margin:8px 0;border:1px solid #e6e9ef;border-radius:8px}
+.card button{padding:10px 16px;background:var(--accent);border:none;color:#fff;border-radius:8px;cursor:pointer}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.grid{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:20px}
+.panel{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(31,41,55,0.04)}
+.panel h3{margin-top:0}
+#suggestions{list-style:none;padding:0;margin:6px 0}
+#suggestions li{background:#f1f5f9;padding:8px;margin:4px 0;border-radius:6px;cursor:pointer}
+footer{text-align:center;padding:18px;color:var(--muted);font-size:14px;margin-top:24px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}

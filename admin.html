@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <button onclick="adminLogout()">Logout</button>
+  </header>
+  <div class="grid">
+    <div class="panel">
+      <h3>Add / Update Book</h3>
+      <input id="bookId" placeholder="Book ID">
+      <input id="title" placeholder="Title">
+      <input id="author" placeholder="Author">
+      <input id="category" placeholder="Category">
+      <input id="shelf" placeholder="Shelf e.g., A1">
+      <input id="copies" type="number" placeholder="Total Copies">
+      <button onclick="addBook()">Add Book</button>
+      <button onclick="updateBook()">Update Book</button>
+      <p id="admin-msg"></p>
+    </div>
+    <div class="panel">
+      <h3>Issue / Return</h3>
+      <input id="issueBookId" placeholder="Book ID">
+      <input id="studentId" placeholder="Student ID">
+      <button onclick="issueBook()">Issue</button>
+      <button onclick="returnBook()">Return</button>
+    </div>
+    <div class="panel">
+      <h3>Reports</h3>
+      <ul id="report-list"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    if (localStorage.getItem('admin') !== 'true') location.href='login.html?mode=admin';
+    // small initial fetch for reports
+    function loadReports() {
+      fetch('http://localhost:8000/student/recommendations').then(r=>r.json()).then(list=>{
+        const ul = document.getElementById('report-list'); ul.innerHTML='';
+        list.forEach(b=>{ const li=document.createElement('li'); li.textContent = `${b.title} (issued:${b.issuedCount})`; ul.appendChild(li); });
+      });
+    }
+    loadReports();
+  </script>
+</body>
+</html>
