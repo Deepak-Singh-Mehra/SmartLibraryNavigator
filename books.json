@@ -1,0 +1,5 @@
+[
+  {"id":"B101","title":"Java Basics","author":"A. Author","category":"Programming","shelf":"A1","totalCopies":3,"issuedCount":0},
+  {"id":"B102","title":"Data Structures","author":"B. Writer","category":"CS","shelf":"A2","totalCopies":2,"issuedCount":1},
+  {"id":"B103","title":"Networks","author":"C. Net","category":"CS","shelf":"B1","totalCopies":1,"issuedCount":0}
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "studentId": "11",
+    "name": "Deepak",
+    "password": "mehra",
+    "issuedBooks": []
+  },
+  {
+    "studentId": "S102",
+    "name": "Bob",
+    "password": "pass456",
+    "issuedBooks": [
+      "B102"
+    ]
+  },
+  {
+    "studentId": "S101",
+    "name": "Alice",
+    "password": "pass123",
+    "issuedBooks": []
+  }
+]
